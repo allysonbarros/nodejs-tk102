@@ -26,7 +26,7 @@ var specs = [
       raw = raw.trim ();
       str = raw.split (',');
 
-      if (str.length === 18 && str [2] === 'GPRMC') {
+      if (str.length === 18 && str [2] === 'GPRMC' || str.length === 28 && str [2] === 'GPRMC') {
         datetime = str [0] .replace (/([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/, function (s, y, m, d, h, i) {
           return '20' + y + '-' + m + '-' + d + ' ' + h + ':' + i;
         });
